@@ -221,7 +221,7 @@ export default function Footer() {
               <div className="mt-2 h-[2px] w-[24px] bg-[#2463D4]" />
 
               <a
-                href="mailto:hello@zevinsoft.com"
+                href="mailto:info@zevinsoft.com"
                 className="
                   mt-4
                   inline-flex
@@ -251,7 +251,7 @@ export default function Footer() {
                   <Mail className="h-[18px] w-[18px]" />
                 </span>
 
-                hello@zevinsoft.com
+                info@zevinsoft.com
               </a>
             </div>
 
