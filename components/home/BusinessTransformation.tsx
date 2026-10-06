@@ -76,6 +76,7 @@ export default function BusinessTransformation() {
         relative
         overflow-hidden
         bg-[#F7F9FC]
+        scroll-mt-[80px]
         py-8
               "
     >

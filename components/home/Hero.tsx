@@ -12,15 +12,19 @@ export default function Hero() {
         className="
           mx-auto
           grid
-          min-h-[640px]
+          min-h-0
           max-w-[1240px]
           items-center
           gap-10
           px-5
           pt-12
+          pb-8
           sm:px-6
+          sm:pb-12
           lg:grid-cols-[0.95fr_1.05fr]
           lg:gap-8
+          lg:py-12
+          lg:min-h-[640px]
     
         "
       >
@@ -60,7 +64,7 @@ export default function Hero() {
             className="
               font-display
               mt-8
-              text-[48px]
+              text-[40px]
               font-extrabold
               uppercase
               leading-[0.95]
@@ -103,6 +107,7 @@ export default function Hero() {
               href="/contact"
               className="
                 inline-flex
+                w-full
                 min-w-[170px]
                 items-center
                 justify-center
@@ -118,6 +123,7 @@ export default function Hero() {
                 transition-all
                 duration-200
                 hover:bg-[#174EA6]
+                sm:w-auto
               "
             >
               <span>Get Quote</span>
@@ -128,6 +134,7 @@ export default function Hero() {
               href="/#services"
               className="
                 inline-flex
+                w-full
                 min-w-[190px]
                 items-center
                 justify-center
@@ -144,6 +151,7 @@ export default function Hero() {
                 transition-all
                 duration-200
                 hover:bg-[#EEF3F8]
+                sm:w-auto
               "
             >
               <span>Explore Solutions</span>
@@ -184,7 +192,7 @@ export default function Hero() {
         </div>
 
         {/* RIGHT ANIMATION */}
-        <div className="relative z-10 lg:-translate-y-8 lg:scale-[0.9]">
+        <div className="relative z-10 hidden md:block lg:-translate-y-8 lg:scale-[0.9]">
           <BusinessSystemVisual />
         </div>
       </div>

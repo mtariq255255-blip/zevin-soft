@@ -36,6 +36,7 @@ export default function Portfolio() {
       className="
         relative
         overflow-hidden
+        scroll-mt-[80px]
         bg-[#F7F9FC]
         py-8
         lg:py-14

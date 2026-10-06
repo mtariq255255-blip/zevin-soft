@@ -84,12 +84,12 @@ function FooterHeading({
   children: ReactNode;
 }) {
   return (
-    <div>
+    <div className="text-center lg:text-left">
       <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-white">
         {children}
       </h3>
 
-      <div className="mt-2 h-[2px] w-[24px] bg-[#2463D4]" />
+      <div className="mx-auto mt-2 h-[2px] w-[24px] bg-[#2463D4] lg:mx-0" />
     </div>
   );
 }
@@ -100,7 +100,7 @@ function FooterHeading({
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-[#08111F] text-[#B8C4D3]">
+    <footer className="relative overflow-hidden bg-[#08111F] text-center text-[#B8C4D3] lg:text-left">
       {/* ===================================================== */}
       {/* TOP GLOW */}
       {/* ===================================================== */}
@@ -149,9 +149,6 @@ export default function Footer() {
           className="
             grid
             gap-12
-
-            md:grid-cols-2
-
             lg:grid-cols-[1.45fr_0.72fr_1fr_1fr_0.92fr_1.45fr]
             lg:gap-8
           "
@@ -160,7 +157,7 @@ export default function Footer() {
           {/* BRAND */}
           {/* ================================================= */}
 
-          <div>
+          <div className="text-center lg:text-left">
             <Link
               href="/"
               aria-label="Zevin Soft Home"
@@ -202,10 +199,12 @@ export default function Footer() {
             <p
               className="
                 mt-4
+                mx-auto
                 max-w-[260px]
                 text-[13px]
                 leading-[1.75]
                 text-[#B8C4D3]
+                lg:mx-0
               "
             >
               We develop websites, software, AI solutions,
@@ -213,95 +212,14 @@ export default function Footer() {
               operate, connect and grow in a digital world.
             </p>
 
-            <div className="mt-8">
-              <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-white">
-                Get In Touch
-              </h3>
-
-              <div className="mt-2 h-[2px] w-[24px] bg-[#2463D4]" />
-
-              <a
-                href="mailto:info@zevinsoft.com"
-                className="
-                  mt-4
-                  inline-flex
-                  items-center
-                  gap-3
-                  text-[13px]
-                  text-[#B8C4D3]
-                  transition-colors
-                  hover:text-white
-                "
-              >
-                <span
-                  className="
-                    flex
-                    h-[38px]
-                    w-[38px]
-                    shrink-0
-                    items-center
-                    justify-center
-                    rounded-[8px]
-                    border
-                    border-[#2463D4]/50
-                    bg-[#0D2037]
-                    text-[#3982F1]
-                  "
-                >
-                  <Mail className="h-[18px] w-[18px]" />
-                </span>
-
-                info@zevinsoft.com
-              </a>
-            </div>
-
-            <div className="mt-6 grid grid-cols-4 gap-3">
-              {benefits.map(({ label, Icon }) => (
-                <div
-                  key={label}
-                  className="flex flex-col items-center text-center"
-                >
-                  <div
-                    className="
-                      flex
-                      h-[42px]
-                      w-[42px]
-                      items-center
-                      justify-center
-                      rounded-[8px]
-                      border
-                      border-[#2463D4]/60
-                      bg-[#0C1D33]
-                      text-[#3E84F5]
-                    "
-                  >
-                    <Icon
-                      className="h-[19px] w-[19px]"
-                      strokeWidth={2}
-                    />
-                  </div>
-
-                  <div
-                    className="
-                      mt-2
-                      whitespace-pre-line
-                      text-[10px]
-                      leading-[1.35]
-                      text-white
-                    "
-                  >
-                    {label}
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* ================================================= */}
           {/* COMPANY */}
           {/* ================================================= */}
 
-          <div>
+          <div className="grid grid-cols-2 gap-x-6 gap-y-10 lg:contents">
+            <div className="text-center lg:text-left">
             <FooterHeading>
               Company
             </FooterHeading>
@@ -329,7 +247,7 @@ export default function Footer() {
           {/* SERVICES */}
           {/* ================================================= */}
 
-          <div>
+          <div className="text-center lg:text-left">
             <FooterHeading>
               Services
             </FooterHeading>
@@ -358,7 +276,7 @@ export default function Footer() {
           {/* SOLUTIONS */}
           {/* ================================================= */}
 
-          <div>
+          <div className="text-center lg:text-left">
             <FooterHeading>
               Solutions
             </FooterHeading>
@@ -384,36 +302,32 @@ export default function Footer() {
           </div>
 
           {/* ================================================= */}
-          {/* PRODUCTS + RESOURCES */}
+          {/* RESOURCES */}
           {/* ================================================= */}
 
-          <div>
-            
-            {/* RESOURCES */}
+          <div className="text-center lg:text-left">
+            <FooterHeading>
+              Resources
+            </FooterHeading>
 
-            <div className="mt-8">
-              <FooterHeading>
-                Resources
-              </FooterHeading>
-
-              <div className="mt-5 flex flex-col gap-3">
-                {resourceLinks.map((item) => (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    className="
-                      text-[12px]
-                      text-[#B8C4D3]
-                      transition-colors
-                      duration-200
-                      hover:text-white
-                    "
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
+            <div className="mt-5 flex flex-col gap-3">
+              {resourceLinks.map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="
+                    text-[12px]
+                    text-[#B8C4D3]
+                    transition-colors
+                    duration-200
+                    hover:text-white
+                  "
+                >
+                  {item.label}
+                </Link>
+              ))}
             </div>
+          </div>
           </div>
 
           {/* ================================================= */}
@@ -423,7 +337,7 @@ export default function Footer() {
           <div
             className="
               relative
-              min-h-[430px]
+              min-h-[390px]
               overflow-hidden
               rounded-[12px]
               border
@@ -436,6 +350,7 @@ export default function Footer() {
               pb-0
               pt-6
               shadow-[0_18px_45px_rgba(0,0,0,0.22)]
+              lg:row-span-2
             "
           >
             {/* BACKGROUND GLOW */}
@@ -456,19 +371,21 @@ export default function Footer() {
 
             {/* TOP CONTENT */}
 
-            <div className="relative z-20">
+            <div className="relative z-20 text-center lg:text-left">
               {/* LABEL */}
 
               <div
                 className="
                   flex
                   items-center
+                  justify-center
                   gap-2
                   text-[10px]
                   font-bold
                   uppercase
                   tracking-[0.20em]
                   text-[#E0D7FF]
+                  lg:justify-start
                 "
               >
                 <Sparkles className="h-4 w-4 text-[#A878FF]" />
@@ -519,7 +436,8 @@ export default function Footer() {
                   flex
                   w-full
                   items-center
-                  justify-between
+                  justify-center
+                  gap-3
                   rounded-[9px]
                   bg-gradient-to-r
                   from-[#5A2DF5]
@@ -534,6 +452,7 @@ export default function Footer() {
                   transition
                   duration-200
                   hover:brightness-110
+                  lg:justify-between
                 "
               >
                 <span>
@@ -552,7 +471,7 @@ export default function Footer() {
               className="
                 relative
               
-                h-[158px]
+                h-[120px]
                 w-full
               "
             >
@@ -590,6 +509,94 @@ export default function Footer() {
               
             </div>
           </div>
+        <div className="mt-10 grid gap-6 md:grid-cols-[auto_1fr] md:items-center md:gap-8 lg:col-span-5 lg:mt-0">
+          <div className="text-center md:text-left">
+            <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-white">
+              Get In Touch
+            </h3>
+
+            <div className="mx-auto mt-2 h-[2px] w-[24px] bg-[#2463D4] md:mx-0" />
+
+            <a
+              href="mailto:info@zevinsoft.com"
+              className="
+                mx-auto
+                mt-4
+                inline-flex
+                items-center
+                justify-center
+                gap-3
+                text-[13px]
+                text-[#B8C4D3]
+                transition-colors
+                hover:text-white
+                md:mx-0
+                md:justify-start
+              "
+            >
+              <span
+                className="
+                  flex
+                  h-[38px]
+                  w-[38px]
+                  shrink-0
+                  items-center
+                  justify-center
+                  rounded-[8px]
+                  border
+                  border-[#2463D4]/50
+                  bg-[#0D2037]
+                  text-[#3982F1]
+                "
+              >
+                <Mail className="h-[18px] w-[18px]" />
+              </span>
+
+              info@zevinsoft.com
+            </a>
+          </div>
+
+          <div className="grid grid-cols-4 gap-3">
+            {benefits.map(({ label, Icon }) => (
+              <div
+                key={label}
+                className="flex flex-col items-center text-center"
+              >
+                <div
+                  className="
+                    flex
+                    h-[42px]
+                    w-[42px]
+                    items-center
+                    justify-center
+                    rounded-[8px]
+                    border
+                    border-[#2463D4]/60
+                    bg-[#0C1D33]
+                    text-[#3E84F5]
+                  "
+                >
+                  <Icon
+                    className="h-[19px] w-[19px]"
+                    strokeWidth={2}
+                  />
+                </div>
+
+                <div
+                  className="
+                    mt-2
+                    whitespace-pre-line
+                    text-[10px]
+                    leading-[1.35]
+                    text-white
+                  "
+                >
+                  {label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
         </div>
 
         {/* =================================================== */}
@@ -614,14 +621,15 @@ export default function Footer() {
             z-20
             flex
             flex-col
+            items-center
             gap-5
             pb-16
             text-[10px]
             text-[#9EACBD]
-
             md:flex-row
             md:items-center
             md:justify-between
+            md:text-left
           "
         >
           <p>
@@ -633,8 +641,10 @@ export default function Footer() {
               flex
               flex-wrap
               items-center
+              justify-center
               gap-x-7
               gap-y-3
+              md:justify-start
             "
           >
             <Link
