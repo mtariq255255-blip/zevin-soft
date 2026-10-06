@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f7f9fc;
+  --alternate: #eef3f8;
+  --feature-blue: #e7f0fc;
+  --ai-background: #f1ecfa;
+  --card: #ffffff;
+  --heading: #0f1b2d;
+  --text: #425166;
+  --muted: #66758a;
+  --primary: #2463d4;
+  --primary-hover: #174ea6;
+  --light-blue: #dceaff;
+  --ai-purple: #7048c8;
+  --border: #dce3ec;
+  --dark: #0f1b2d;
+  --footer: #08111f;
+  --dark-secondary: #b8c4d3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.font-display {
+  font-family: var(--font-manrope), Arial, Helvetica, sans-serif;
+}
+
+@keyframes orbitSpin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes counterSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes floatY {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulseSoft {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.03);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.orbit-container {
+  animation: orbitSpin 26s linear infinite;
+}
+
+.orbit-card {
+  animation: counterSpin 26s linear infinite;
+}
+
+.float-soft {
+  animation: floatY 5s ease-in-out infinite;
+}
+
+.pulse-soft {
+  animation: pulseSoft 4s ease-in-out infinite;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.7s ease forwards;
+}
+
+.hero-dot-grid {
+  background-image: radial-gradient(#dce3ec 1.2px, transparent 1.2px);
+  background-size: 14px 14px;
+}
+
+.hero-bg-soft {
+  background:
+    radial-gradient(circle at 65% 45%, rgba(36, 99, 212, 0.10), transparent 26%),
+    radial-gradient(circle at 45% 56%, rgba(112, 72, 200, 0.08), transparent 24%),
+    linear-gradient(180deg, #f7f9fc 0%, #f3f7fc 100%);
+}
+
+@keyframes heroParticlesSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes heroCenterPulse {
+  50% {
+    transform: scale(1.01);
+  }
+}
+
+@keyframes heroServiceFloatUp {
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes heroServiceFloatDown {
+  50% {
+    transform: translateY(3px);
+  }
+}
+
+.hero-particles-spin {
+  animation: heroParticlesSpin 38s linear infinite;
+}
+
+.hero-center-pulse {
+  animation: heroCenterPulse 5s ease-in-out infinite;
+}
+
+.hero-service-float-up {
+  animation: heroServiceFloatUp 4.5s ease-in-out infinite;
+}
+
+.hero-service-float-down {
+  animation: heroServiceFloatDown 4.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-particles-spin,
+  .hero-center-pulse,
+  .hero-service-float-up,
+  .hero-service-float-down {
+    animation: none;
+  }
+}
